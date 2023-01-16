@@ -1,14 +1,20 @@
+let start = document.getElementById("start");
 
 let score = 0;
 
 // Timer
 let timer = document.querySelector('#time');
-let secondsLeft = 10;
+let secondsLeft = 60;
 let timerInterval = null;
 
 timer.textContent = secondsLeft + " seconds left.";
 
-setTime();
+start.addEventListener("click", function () {
+    window.location.href = "index.html";
+
+
+});
+
 function setTime() {
     // Sets interval in variable
     timerInterval = setInterval(function () {
@@ -25,6 +31,7 @@ function setTime() {
 
     }, 1000);
 }
+
 
 // Function to create and append colorsplosion image
 function allDone() {

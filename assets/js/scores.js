@@ -9,11 +9,22 @@ if (userList === null) {
 
 function renderItems() {
 
-    for (let index = 0; index < userList.length; index++) {
+    userList.sort(function (userA, userB) {
+        return userB.score - userA.score;
+    });
 
+    for (let index = 0; index < userList.length; index++) {
         let liElement = document.createElement("li");
         liElement.textContent = `${userList[index].initials}: ${userList[index].score}`;
         highScoreList.appendChild(liElement);
     }
 }
 renderItems();
+
+let clearScores = document.getElementById("clear");
+
+clearScores.addEventListener("click", function () {
+    localStorage.clear();
+    highScoreList.innerHTML = [];
+
+});
