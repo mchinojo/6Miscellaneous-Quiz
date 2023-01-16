@@ -1,10 +1,9 @@
 
 let score = 0;
 
-
 // Timer
 let timer = document.querySelector('#time');
-let secondsLeft = 60;
+let secondsLeft = 10;
 let timerInterval = null;
 
 timer.textContent = secondsLeft + " seconds left.";
@@ -36,13 +35,7 @@ function allDone() {
     endScreen.classList.remove("hide");
     clearInterval(timerInterval);
     finalScore.textContent = `${score}`
-
-
-
-
-
-
-}
+};
 
 
 

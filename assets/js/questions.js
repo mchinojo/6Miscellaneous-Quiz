@@ -26,50 +26,48 @@ questionsArray = [
         answer: "1"
     },
 
-    {
-        title: "4. What is a group of lions called?",
-        choices: ["Squad", "Pack", "Herd", "Pride"],
-        answer: "3"
-    },
+    // {
+    //     title: "4. What is a group of lions called?",
+    //     choices: ["Squad", "Pack", "Herd", "Pride"],
+    //     answer: "3"
+    // },
 
-    {
-        title: "5. What is the longest river in the world?",
-        choices: ["Amazon", "Congo", "Nile", "Hudson"],
-        answer: "2"
-    },
+    // {
+    //     title: "5. What is the longest river in the world?",
+    //     choices: ["Amazon", "Congo", "Nile", "Hudson"],
+    //     answer: "2"
+    // },
 
-    {
-        title: "6. How many hearts does an octopus have?",
-        choices: ["1", "2", "3", "4"],
-        answer: "2"
-    },
+    // {
+    //     title: "6. How many hearts does an octopus have?",
+    //     choices: ["1", "2", "3", "4"],
+    //     answer: "2"
+    // },
 
-    {
-        title: "7. Vermillion is a shade of which color?",
-        choices: ["Blue", "Red", "Green", "Yellow"],
-        answer: "1"
-    },
+    // {
+    //     title: "7. Vermillion is a shade of which color?",
+    //     choices: ["Blue", "Red", "Green", "Yellow"],
+    //     answer: "1"
+    // },
 
-    {
-        title: "8. What is the first element on the periodic table?",
-        choices: ["Nitrogen", "Helium", "Lithium", "Hydrogen"],
-        answer: "3"
-    },
+    // {
+    //     title: "8. What is the first element on the periodic table?",
+    //     choices: ["Nitrogen", "Helium", "Lithium", "Hydrogen"],
+    //     answer: "3"
+    // },
 
-    {
-        title: "9. Who invented Arabic numerals?",
-        choices: ["Indians", "Arabs", "Romans", "Greeks"],
-        answer: "0"
-    },
+    // {
+    //     title: "9. Who invented Arabic numerals?",
+    //     choices: ["Indians", "Arabs", "Romans", "Greeks"],
+    //     answer: "0"
+    // },
 
-    {
-        title: "10. How many ribs are in the human body?",
-        choices: ["16", "24", "19", "29"],
-        answer: "1"
-    },
+    // {
+    //     title: "10. How many ribs are in the human body?",
+    //     choices: ["16", "24", "19", "29"],
+    //     answer: "1"
+    // },
 ];
-
-
 
 
 // Create a function that renderize the question title and choices.
@@ -82,7 +80,9 @@ function renderQuestion(numberOfQuestion) {
         questionsDiv.classList.add("hide");
         endScreen.classList.remove("hide");
         clearInterval(timerInterval);
+        // localStorage.setItem("score", score);
         finalScore.textContent = `${score}`
+
 
         return;
     }
@@ -133,22 +133,43 @@ function renderQuestion(numberOfQuestion) {
     }
 };
 
-
-
-// crear una función que llame a la función renderQuestion
-// dentro tenga un event listener
-
 numberOfQuestion = 0;
 renderQuestion(numberOfQuestion);
 
+let initialsInput = document.getElementById("initials");
+let submitButton = document.getElementById("submit");
 
-// imageContainer.addEventListener("click", function (event) {
-//     let element = event.target;
-//     if (q.correctAnswer == index) {
-//         console.log('Correct Answer!');
-//     } else {
-//         console.log('Wrong Answer!');
-//     }
-// });
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let userList = JSON.parse(localStorage.getItem("userList"));
+    // create user object from submission
+
+    if (userList === null) {
+        userList = [];
+    }
+
+    let user = {
+        initials: initialsInput.value,
+        score: score,
+    };
+
+    // validate the fields
+    if (user.firstName === "") {
+        alert("Initials cannot be blank");
+        return;
+    }
+
+    userList.push(user);
+    localStorage.setItem("userList", JSON.stringify(userList));
+
+    window.location.href = "highscores.html";
+
+
+});
+
+
+
+
 
 
