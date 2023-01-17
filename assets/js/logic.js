@@ -2,12 +2,16 @@
 let start = document.getElementById("start");
 let startScreen = document.getElementById("start-screen");
 let questionsDiv = document.getElementById("questions");
+let feedbackDiv = document.getElementById("feedback");
 let endScreen = document.getElementById("end-screen");
 let feedback = document.getElementById("feedback");
 let finalScore = document.getElementById("final-score");
 let renderChoices = document.getElementById("choices");
 let initialsInput = document.getElementById("initials");
 let submitButton = document.getElementById("submit");
+
+let audioCorrect = new Audio("assets/sfx/correct.wav");
+let audioWrong = new Audio("assets/sfx/incorrect.wav");
 
 // A function for my timer
 function setTime() {
@@ -81,11 +85,13 @@ function renderQuestion(numberOfQuestion) {
             // If the "number as a string" of my object matches or not with the "number as a string" of the data-index.
             if (correctAnswer === userAnswer) {
                 feedback.textContent = "Correct!";
+                audioCorrect.play();
                 score++;
             }
 
             else {
                 feedback.textContent = "Wrong!";
+                audioWrong.play();
                 secondsLeft -= 10;
             }
             //  Next question, please. 
@@ -98,6 +104,13 @@ function renderQuestion(numberOfQuestion) {
 
     }
 };
+
+// A function to display feedback when the input is left on blank.
+function displayFeedback(type, message) {
+    feedbackDiv.classList.remove("hide");
+    feedbackDiv.textContent = message;
+    feedbackDiv.setAttribute("class", type);
+}
 
 // A button to hide the "start screen" and run the timer.
 start.addEventListener("click", function () {
@@ -124,7 +137,7 @@ submitButton.addEventListener("click", function (event) {
 
     // validate the fields
     if (user.initials === "") {
-        alert("Initials cannot be blank");
+        displayFeedback("error", "Your initials cannot be blank");
         return;
     }
 
