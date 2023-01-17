@@ -1,88 +1,51 @@
 # Module 6 Challenge Web APIs: Code Quiz
 
-## Your Task
+## Description
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+This project is about building a timed quiz with multiple-choice questions. The CSS and HTML files were given to me, so my challenge is to create the JavaScript files.
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+This quiz must comply with the following requirements:
 
-
-## User Story
-
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-## Acceptance Criteria
-
-Create a code quiz that contains the following requirements:
-
-* A start button that when clicked a timer starts and the first question appears.
+* A start button that when is clicked, a timer starts and the first question appears.
  
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
+  * Questions with buttons for each answer.
+  * When an answer is clicked, the next question appears.
+  * If the answer clicked is incorrect, then subtract 10 seconds from the timer.
 
 * The quiz should end when all questions are answered or the timer reaches 0.
 
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
+  * When the game ends, it should display the user score and give the ability to save their initials and their score.
 
-The following animation demonstrates the application functionality:
+This app will run in the browser, and will feature dynamically updated HTML and CSS powered by my JavaScript code. It will have a clean, polished, and responsive user interface.
 
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
+Here is a link to the deployed application:
 
-## Grading Requirements
+https://github.com/mchinojo/Challenge6-Code-Quiz
 
-This challenge is graded based on the following criteria: 
+## Installation
 
-### Technical Acceptance Criteria: 40%
+Clone the project and open it using your favourite browser (I recommend using Chrome).
 
-* Satisfies all of the above acceptance criteria.
+## Usage
 
-### Deployment: 32%
+My web application should resemble this following animation that demonstrates the application functionality:
 
-* Application deployed at live URL.
+![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](assets/08-web-apis-challenge-demo.gif)
 
-* Application loads with no errors.
+## Credits
 
-* Application GitHub URL submitted.
+This project was made possible by my instructors and teacher assistants. Also I followed some tutorials from W3Schools, MDN Web Docs and GameDev Academy:
 
-* GitHub repository that contains application code.
+https://www.w3schools.com/
 
-### Application Quality: 15%
+https://developer.mozilla.org/
 
-* Application user experience is intuitive and easy to navigate.
+https://gamedevacademy.org/javascript-quiz-tutorial/
 
-* Application user interface style is clean and polished.
+I picked 10 questions from this website:
 
-* Application resembles the mock-up functionality provided in the challenge instructions.
+https://thoughtcatalog.com/january-nelson/2020/04/multiple-choice-trivia-questions-and-answers/
 
-### Repository Quality: 13%
+### License
 
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Please refer to the LICENSE in the repo.

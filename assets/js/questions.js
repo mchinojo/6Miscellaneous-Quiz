@@ -1,5 +1,14 @@
-// Created an array of objects with my questions.
-questionsArray = [
+// Variables for my timer.
+let timer = document.querySelector('#time');
+let secondsLeft = 60;
+let timerInterval = null;
+let score = 0;
+
+// A variable to start the game with the first question.
+let numberOfQuestion = 0;
+
+// An array of objects with my questions.
+let questionsArray = [
     {
         title: "1. Which planet is the hottest?",
         choices: ["Venus", "Saturn", "Mercury", "Mars"],
@@ -61,7 +70,5 @@ questionsArray = [
     },
 ];
 
-
-
-
-
+// Call the function to render the questions.
+renderQuestion(numberOfQuestion);
