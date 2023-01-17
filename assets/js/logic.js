@@ -26,7 +26,7 @@ function setTime() {
     }, 1000);
 }
 
-// A Function to render the end sreen with my score.
+// A Function to render the "end screen" with my score.
 function allDone() {
 
     let questionsDiv = document.getElementById("questions");
@@ -99,7 +99,7 @@ function renderQuestion(numberOfQuestion) {
     }
 };
 
-// A button to hide the start screen and run the timer.
+// A button to hide the "start screen" and run the timer.
 start.addEventListener("click", function () {
     startScreen.classList.add("hide");
     questionsDiv.classList.remove("hide");
