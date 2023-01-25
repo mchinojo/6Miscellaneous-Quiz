@@ -1,4 +1,4 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Module 6 Challenge Web APIs: Miscellaneous Quiz
 
 ## Description
 
@@ -20,7 +20,7 @@ This app will run in the browser, and will feature dynamically updated HTML and 
 
 Here is a link to the deployed application:
 
-https://github.com/mchinojo/Challenge6-Code-Quiz
+https://github.com/mchinojo/6Miscellaneous-Quiz
 
 ## Installation
 
